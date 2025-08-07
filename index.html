@@ -1159,10 +1159,22 @@
         font-size: 1.3rem;
         transition: var(--transition);
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        cursor: pointer;
+      }
+
+      .back-to-top.active {
+        opacity: 1;
+        visibility: visible;
       }
 
       .back-to-top:hover {
-        transform: translateY(-10px) scale(1.1);
+        transform: translateY(-5px) scale(1.1);
         box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
       }
 
@@ -1648,25 +1660,25 @@
           </div>
 
           <div class="contact-form fade-in delay-1">
-            <form id="contactForm">
+            <form id="contactForm" action="https://formspree.io/f/mjvnnqoq" method="POST">
               <div class="form-group">
                 <label for="name">Nama Lengkap</label>
-                <input type="text" id="name" class="form-control" required />
+                <input type="text" id="name" name="name" class="form-control" required />
               </div>
 
               <div class="form-group">
                 <label for="email">Alamat Email</label>
-                <input type="email" id="email" class="form-control" required />
+                <input type="email" id="email" name="email" class="form-control" required />
               </div>
 
               <div class="form-group">
                 <label for="subject">Subjek</label>
-                <input type="text" id="subject" class="form-control" required />
+                <input type="text" id="subject" name="subject" class="form-control" required />
               </div>
 
               <div class="form-group">
                 <label for="message">Pesan Anda</label>
-                <textarea id="message" class="form-control" rows="6" required></textarea>
+                <textarea id="message" name="message" class="form-control" rows="6" required></textarea>
               </div>
 
               <button type="submit" class="btn">Kirim Pesan <i class="fas fa-paper-plane"></i></button>
@@ -1692,15 +1704,16 @@
 
           <div class="social-links">
             <a href="https://www.linkedin.com/in/ahmadroihanazis11/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/username_anda" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://github.com/Royhaanz/" target="_blank"><i class="fab fa-github"></i></a>
             <a href="https://www.instagram.com/royhaanz/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://twitter.com/username_anda" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://x.com/royhanz___" target="_blank"><i class="fab fa-twitter"></i></a>
           </div>
-
-          <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
         </div>
       </div>
     </footer>
+
+    <!-- Tombol Back to Top -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
 
     <!-- Tombol Cetak -->
     <!-- <button class="print-btn" onclick="window.print()">
@@ -1778,10 +1791,19 @@
 
         window.addEventListener('scroll', () => {
           if (window.scrollY > 300) {
-            backToTop.style.display = 'block';
+            backToTop.classList.add('active');
           } else {
-            backToTop.style.display = 'none';
+            backToTop.classList.remove('active');
           }
+        });
+
+        // Klik tombol back to top
+        backToTop.addEventListener('click', (e) => {
+          e.preventDefault();
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
         });
 
         // Form Submission
@@ -1789,11 +1811,31 @@
         if (contactForm) {
           contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            alert('Terima kasih! Pesan Anda telah terkirim. Saya akan segera menghubungi Anda kembali.');
-            contactForm.reset();
+            
+            // Kirim form menggunakan Formspree
+            const formData = new FormData(contactForm);
+            fetch(contactForm.action, {
+              method: 'POST',
+              body: formData,
+              headers: {
+                'Accept': 'application/json'
+              }
+            })
+            .then(response => {
+              if (response.ok) {
+                alert('Terima kasih! Pesan Anda telah terkirim. Saya akan segera menghubungi Anda kembali.');
+                contactForm.reset();
+              } else {
+                throw new Error('Network response was not ok');
+              }
+            })
+            .catch(error => {
+              console.error('Error:', error);
+              alert('Terjadi kesalahan saat mengirim pesan. Anda dapat menghubungi saya langsung melalui email hanroy209@gmail.com atau WhatsApp 081252167797.');
+            });
           });
         }
       });
     </script>
   </body>
-</html>
+</html>git
