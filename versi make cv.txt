@@ -6,13 +6,6 @@
     <title>Ahmad Roihan Azis | Portfolio Profesional</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <!-- Tambahkan library EmailJS -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-      (function() {
-        emailjs.init("YOUR_PUBLIC_KEY"); // Ganti dengan Public Key EmailJS Anda
-      })();
-    </script>
     <style>
       /* ========== VARIABEL & RESET ========== */
       :root {
@@ -705,7 +698,6 @@
       .experience-container {
         max-width: 900px;
         margin: 0 auto;
-        position: relative;
       }
 
       .experience-item {
@@ -723,7 +715,6 @@
       .experience-item:hover {
         transform: translateY(-10px);
         box-shadow: var(--shadow-lg);
-        border-left: 5px solid var(--accent);
       }
 
       .experience-header {
@@ -940,12 +931,6 @@
         color: var(--text);
         font-size: 1rem;
         line-height: 1.7;
-        transition: var(--transition);
-      }
-
-      .skills-list li:hover {
-        color: var(--primary);
-        transform: translateX(5px);
       }
 
       .skills-list li::before {
@@ -1052,7 +1037,6 @@
 
       .form-group {
         margin-bottom: 25px;
-        position: relative;
       }
 
       .form-group label {
@@ -1106,21 +1090,6 @@
         transform: translateY(-5px);
         box-shadow: 0 15px 30px rgba(67, 97, 238, 0.4);
         background: linear-gradient(135deg, var(--primary-light), var(--primary));
-      }
-
-      .btn-whatsapp {
-        background: linear-gradient(135deg, #25D366, #128C7E);
-        margin-left: 15px;
-      }
-
-      .btn-whatsapp:hover {
-        background: linear-gradient(135deg, #128C7E, #25D366);
-      }
-
-      .form-buttons {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
       }
 
       /* ========== CV SECTION ========== */
@@ -1184,8 +1153,6 @@
         gap: 30px;
         margin-bottom: 30px;
         flex-wrap: wrap;
-        position: relative;
-        z-index: 2;
       }
 
       .footer-links a {
@@ -1219,8 +1186,6 @@
         margin-bottom: 30px;
         opacity: 0.8;
         font-size: 1rem;
-        position: relative;
-        z-index: 2;
       }
 
       .back-to-top {
@@ -1260,8 +1225,6 @@
         justify-content: center;
         gap: 15px;
         margin-top: 30px;
-        position: relative;
-        z-index: 2;
       }
 
       .social-links a {
@@ -1312,69 +1275,10 @@
         }
       }
 
-      .print-btn {
-        position: fixed;
-        bottom: 30px;
-        right: 90px;
-        z-index: 999;
-        padding: 12px 20px;
-        background: linear-gradient(135deg, var(--primary), var(--primary-light));
-        color: white;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: 600;
-        transition: var(--transition);
-        box-shadow: 0 10px 20px rgba(67, 97, 238, 0.3);
-        border: none;
-        cursor: pointer;
-        font-size: 0.9rem;
-      }
 
       .print-btn:hover {
         transform: translateY(-3px);
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-      }
-
-      /* ========== NOTIFICATION ========== */
-      .notification {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        padding: 15px 25px;
-        border-radius: 8px;
-        background: white;
-        color: var(--dark);
-        box-shadow: var(--shadow-lg);
-        z-index: 10000;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        transform: translateX(150%);
-        transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      }
-
-      .notification.show {
-        transform: translateX(0);
-      }
-
-      .notification.success {
-        border-left: 4px solid #4CAF50;
-      }
-
-      .notification.error {
-        border-left: 4px solid #f44336;
-      }
-
-      .notification i {
-        font-size: 1.2rem;
-      }
-
-      .notification.success i {
-        color: #4CAF50;
-      }
-
-      .notification.error i {
-        color: #f44336;
       }
 
       /* ========== RESPONSIVE ========== */
@@ -1413,15 +1317,6 @@
 
         .cv-embed {
           height: 600px;
-        }
-
-        .form-buttons {
-          flex-direction: column;
-          gap: 15px;
-        }
-
-        .btn-whatsapp {
-          margin-left: 0;
         }
       }
 
@@ -1484,13 +1379,6 @@
         .cv-embed {
           height: 500px;
         }
-
-        .print-btn {
-          bottom: 15px;
-          right: 15px;
-          font-size: 0.8rem;
-          padding: 10px 15px;
-        }
       }
 
       @media (max-width: 576px) {
@@ -1548,22 +1436,6 @@
 
         .cv-embed {
           height: 400px;
-        }
-
-        .contact-item {
-          flex-direction: column;
-          text-align: center;
-          gap: 15px;
-        }
-
-        .contact-icon {
-          margin-right: 0;
-        }
-
-        .notification {
-          left: 20px;
-          right: 20px;
-          width: calc(100% - 40px);
         }
       }
     </style>
@@ -1722,7 +1594,7 @@
               <li>Mengoperasikan sistem administrasi produksi</li>
               <li>Bekerja dalam tim lintas fungsi untuk mencapai target produksi</li>
               <li>Membuat laporan harian menggunakan Microsoft Excel</li>
-              <li>Memastikan documentation produksi tersusun rapi dan mudah diakses</li>
+              <li>Memastikan dokumentasi produksi tersusun rapi dan mudah diakses</li>
             </ul>
           </div>
         </div>
@@ -1811,8 +1683,8 @@
                 <i class="fas fa-phone"></i>
               </div>
               <div class="contact-details">
-                <h4>Telepon/WhatsApp</h4>
-                <a href="https://wa.me/6281252167797" target="_blank">081252167797</a>
+                <h4>Telepon</h4>
+                <a href="tel:+6281252167797">081252167797</a>
               </div>
             </div>
 
@@ -1838,7 +1710,7 @@
           </div>
 
           <div class="contact-form fade-in delay-1">
-            <form id="contactForm">
+            <form id="contactForm" action="https://formspree.io/f/mjvnnqoq" method="POST">
               <div class="form-group">
                 <label for="name">Nama Lengkap</label>
                 <input type="text" id="name" name="name" class="form-control" required />
@@ -1859,10 +1731,7 @@
                 <textarea id="message" name="message" class="form-control" rows="6" required></textarea>
               </div>
 
-              <div class="form-buttons">
-                <button type="submit" class="btn">Kirim Pesan <i class="fas fa-paper-plane"></i></button>
-                <a href="https://wa.me/6281252167797?text=Halo Ahmad, saya tertarik dengan profil Anda." target="_blank" class="btn btn-whatsapp">Chat WhatsApp <i class="fab fa-whatsapp"></i></a>
-              </div>
+              <button type="submit" class="btn">Kirim Pesan <i class="fas fa-paper-plane"></i></button>
             </form>
           </div>
         </div>
@@ -1897,34 +1766,10 @@
     <!-- Tombol Back to Top -->
     <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
 
-    <!-- Notification -->
-    <div id="notification" class="notification">
-      <i class="fas fa-check-circle"></i>
-      <span id="notification-text"></span>
-    </div>
+   
 
     <!-- JAVASCRIPT -->
     <script>
-      // Inisialisasi EmailJS
-      (function() {
-        emailjs.init("YOUR_PUBLIC_KEY"); // Ganti dengan Public Key EmailJS Anda
-      })();
-
-      // Fungsi untuk menampilkan notifikasi
-      function showNotification(message, isSuccess = true) {
-        const notification = document.getElementById('notification');
-        const notificationText = document.getElementById('notification-text');
-        
-        notificationText.textContent = message;
-        notification.className = isSuccess ? 'notification success' : 'notification error';
-        notification.classList.add('show');
-        
-        // Sembunyikan notifikasi setelah 5 detik
-        setTimeout(() => {
-          notification.classList.remove('show');
-        }, 5000);
-      }
-
       // Animasi Scroll
       document.addEventListener('DOMContentLoaded', function () {
         const fadeElements = document.querySelectorAll('.fade-in');
@@ -2009,31 +1854,33 @@
           });
         });
 
-        // Form Submission dengan EmailJS
+        // Form Submission
         const contactForm = document.getElementById('contactForm');
         if (contactForm) {
           contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
             
-            // Tampilkan indikator loading
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
-            submitBtn.disabled = true;
-            
-            // Kirim email menggunakan EmailJS
-            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
-              .then(() => {
-                showNotification('Terima kasih! Pesan Anda telah terkirim. Saya akan segera menghubungi Anda kembali.');
+            // Kirim form menggunakan Formspree
+            const formData = new FormData(contactForm);
+            fetch(contactForm.action, {
+              method: 'POST',
+              body: formData,
+              headers: {
+                'Accept': 'application/json'
+              }
+            })
+            .then(response => {
+              if (response.ok) {
+                alert('Terima kasih! Pesan Anda telah terkirim. Saya akan segera menghubungi Anda kembali.');
                 contactForm.reset();
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-              }, (error) => {
-                console.error('Error:', error);
-                showNotification('Terjadi kesalahan saat mengirim pesan. Silakan coba lagi atau hubungi saya langsung melalui WhatsApp.', false);
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-              });
+              } else {
+                throw new Error('Network response was not ok');
+              }
+            })
+            .catch(error => {
+              console.error('Error:', error);
+              alert('Terjadi kesalahan saat mengirim pesan. Anda dapat menghubungi saya langsung melalui email hanroy209@gmail.com atau WhatsApp 081252167797.');
+            });
           });
         }
       });
