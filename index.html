@@ -6,13 +6,6 @@
     <title>Ahmad Roihan Azis | Portfolio Profesional</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <!-- Tambahkan library EmailJS -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-      (function() {
-        emailjs.init("YOUR_PUBLIC_KEY"); // Ganti dengan Public Key EmailJS Anda
-      })();
-    </script>
     <style>
       /* ========== VARIABEL & RESET ========== */
       :root {
@@ -65,347 +58,6 @@
       section {
         padding: 80px 0;
         position: relative;
-      }
-
-      /* ========== STYLE UNTUK CETAK ========== */
-      @media print {
-        * {
-          -webkit-print-color-adjust: exact !important;
-          print-color-adjust: exact !important;
-        }
-
-        body {
-          background-color: white !important;
-          color: #333 !important;
-          font-size: 11pt;
-          line-height: 1.4;
-          font-family: 'Times New Roman', serif;
-        }
-
-        /* Layout Umum untuk Cetak */
-        .container {
-          width: 100% !important;
-          max-width: 100% !important;
-          padding: 0 10mm !important;
-          margin: 0 !important;
-        }
-
-        section {
-          padding: 5mm 0 !important;
-          margin: 0 !important;
-          page-break-inside: avoid;
-          break-inside: avoid;
-        }
-
-        /* Header untuk Cetak */
-        header {
-          height: auto !important;
-          min-height: auto !important;
-          background: linear-gradient(135deg, var(--dark), var(--secondary)) !important;
-          color: white !important;
-          padding: 15mm 0 10mm !important;
-          page-break-after: always;
-          text-align: center;
-          position: relative;
-        }
-
-        .header-content {
-          text-align: center !important;
-          padding: 0 !important;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .profile-img-container {
-          width: 35mm !important;
-          height: 35mm !important;
-          margin: 0 auto 3mm !important;
-          float: none !important;
-          animation: none !important;
-          border: 2px solid white !important;
-          box-shadow: 0 0 5px rgba(0, 0, 0, 0.1) !important;
-        }
-
-        .header-content h1 {
-          font-size: 18pt !important;
-          margin: 3mm 0 2mm !important;
-          color: white !important;
-        }
-
-        .header-content p {
-          font-size: 12pt !important;
-          margin-bottom: 3mm !important;
-        }
-
-        /* Navigation dan Elemen yang Tidak Perlu Dicetak */
-        nav,
-        .menu-toggle,
-        .scroll-down,
-        .back-to-top,
-        .social-links,
-        .print-btn,
-        .footer-links {
-          display: none !important;
-        }
-
-        /* Tentang Saya */
-        .about-content {
-          display: block !important;
-        }
-
-        .about-img-wrapper {
-          display: none;
-        }
-
-        .about-text h3 {
-          font-size: 14pt !important;
-          margin-bottom: 3mm !important;
-        }
-
-        .about-text p {
-          font-size: 11pt !important;
-          margin-bottom: 2mm !important;
-        }
-
-        .skills {
-          margin-top: 3mm !important;
-          display: flex;
-          flex-wrap: wrap;
-          gap: 1mm;
-        }
-
-        .skill {
-          background-color: #f0f0f0 !important;
-          color: #333 !important;
-          padding: 0.5mm 2mm !important;
-          font-size: 9pt !important;
-          border: 1px solid #ddd !important;
-          box-shadow: none !important;
-          transform: none !important;
-          margin: 1mm !important;
-        }
-
-        /* Pengalaman Kerja */
-        .experience-item {
-          page-break-inside: avoid;
-          margin-bottom: 4mm !important;
-          padding: 3mm !important;
-          box-shadow: 0 0 3px rgba(0, 0, 0, 0.05) !important;
-        }
-
-        .experience-title {
-          font-size: 12pt !important;
-          color: var(--primary) !important;
-        }
-
-        .experience-date {
-          background: var(--primary) !important;
-          color: white !important;
-          padding: 0.5mm 2mm !important;
-          font-size: 9pt !important;
-        }
-
-        .experience-company {
-          font-size: 11pt !important;
-          margin-bottom: 1mm !important;
-        }
-
-        .experience-tasks li {
-          font-size: 10pt !important;
-          margin-bottom: 1mm !important;
-          padding-left: 4mm !important;
-        }
-
-        /* Pendidikan */
-        .education-container {
-          display: grid !important;
-          grid-template-columns: 1fr 1fr !important;
-          gap: 3mm !important;
-        }
-
-        @page :first {
-          size: portrait;
-        }
-
-        @page {
-          size: auto;
-          margin: 10mm;
-        }
-
-        @page landscape {
-          size: landscape;
-          margin: 10mm;
-        }
-
-        @media print and (orientation: landscape) {
-          .education-container {
-            grid-template-columns: 1fr 1fr !important;
-          }
-
-          .skills-container {
-            grid-template-columns: 1fr 1fr 1fr !important;
-          }
-
-          .experience-item,
-          .education-item {
-            margin-bottom: 3mm !important;
-            padding: 2mm !important;
-          }
-
-          section {
-            padding: 3mm 0 !important;
-          }
-        }
-
-        .education-item {
-          page-break-inside: avoid;
-          margin-bottom: 4mm !important;
-          padding: 3mm !important;
-          box-shadow: 0 0 3px rgba(0, 0, 0, 0.05) !important;
-        }
-
-        .education-header {
-          display: flex !important;
-          align-items: center !important;
-          margin-bottom: 2mm !important;
-        }
-
-        .education-icon {
-          width: 10mm !important;
-          height: 10mm !important;
-          font-size: 12pt !important;
-          margin-right: 3mm !important;
-        }
-
-        .education-details h3 {
-          font-size: 12pt !important;
-        }
-
-        .education-meta span {
-          font-size: 8pt !important;
-          padding: 0.3mm 1.5mm !important;
-        }
-
-        /* Keahlian */
-        .skills-container {
-          display: grid !important;
-          grid-template-columns: 1fr !important;
-          gap: 2mm !important;
-        }
-
-        .skills-category {
-          page-break-inside: avoid;
-          margin-bottom: 4mm !important;
-          padding: 3mm !important;
-        }
-
-        .skills-category h3 {
-          font-size: 12pt !important;
-          margin-bottom: 2mm !important;
-        }
-
-        .skills-list li {
-          font-size: 10pt !important;
-          margin-bottom: 1mm !important;
-        }
-
-        /* Kontak */
-        .contact-container {
-          display: grid !important;
-          grid-template-columns: 1fr 1fr !important;
-          gap: 3mm !important;
-        }
-
-        .contact-info {
-          margin-bottom: 0 !important;
-        }
-
-        .contact-item {
-          page-break-inside: avoid;
-          margin-bottom: 2mm !important;
-          padding: 2mm !important;
-        }
-
-        .contact-icon {
-          width: 8mm !important;
-          height: 8mm !important;
-          font-size: 10pt !important;
-          margin-right: 2mm !important;
-        }
-
-        .contact-details h4 {
-          font-size: 10pt !important;
-        }
-
-        .contact-details p,
-        .contact-details a {
-          font-size: 9pt !important;
-        }
-
-        .contact-form {
-          display: none !important;
-        }
-
-        /* Footer */
-        footer {
-          background: linear-gradient(135deg, var(--secondary), var(--dark)) !important;
-          color: white !important;
-          clip-path: none !important;
-          padding: 5mm 0 !important;
-          page-break-before: always;
-          text-align: center;
-        }
-
-        .copyright {
-          font-size: 9pt !important;
-          margin-bottom: 2mm !important;
-        }
-
-        /* Judul Section */
-        .section-title h2 {
-          font-size: 16pt !important;
-          margin-bottom: 3mm !important;
-          padding-bottom: 1mm;
-          border-bottom: 1px solid #ddd;
-          page-break-after: avoid;
-        }
-
-        /* Memastikan Warna Tetap Terlihat */
-        h1,
-        h2,
-        h3,
-        h4 {
-          color: #222 !important;
-        }
-
-        .experience-title {
-          color: var(--primary) !important;
-        }
-
-        .experience-company,
-        .education-details h3 {
-          color: var(--secondary) !important;
-        }
-
-        .skills-category h3 {
-          color: var(--primary) !important;
-        }
-
-        /* Garis pemisah antar section */
-        section + section {
-          border-top: 1px solid #eee;
-          padding-top: 5mm !important;
-        }
-
-        /* Mencegah pemotongan elemen penting */
-        .experience-item,
-        .education-item,
-        .skills-category,
-        .contact-item {
-          page-break-inside: avoid;
-          break-inside: avoid;
-        }
       }
 
       /* ========== FOTO PROFIL ========== */
@@ -608,6 +260,7 @@
         position: relative;
         transition: var(--transition);
         letter-spacing: 0.5px;
+        cursor: pointer;
       }
 
       .nav-links a::after {
@@ -671,6 +324,7 @@
         color: var(--text);
         font-size: 1rem;
         line-height: 1.8;
+        text-align: justify;
       }
 
       .skills {
@@ -705,7 +359,6 @@
       .experience-container {
         max-width: 900px;
         margin: 0 auto;
-        position: relative;
       }
 
       .experience-item {
@@ -733,6 +386,7 @@
         align-items: center;
         flex-wrap: wrap;
         gap: 15px;
+        position: relative;
       }
 
       .experience-title {
@@ -849,6 +503,7 @@
         font-size: 1.3rem;
         margin-bottom: 8px;
         color: var(--secondary);
+        font-family: 'Poppins', sans-serif;
       }
 
       .education-meta {
@@ -914,6 +569,7 @@
         display: flex;
         align-items: center;
         gap: 12px;
+        font-family: 'Poppins', sans-serif;
       }
 
       .skills-category h3 i {
@@ -940,12 +596,6 @@
         color: var(--text);
         font-size: 1rem;
         line-height: 1.7;
-        transition: var(--transition);
-      }
-
-      .skills-list li:hover {
-        color: var(--primary);
-        transform: translateX(5px);
       }
 
       .skills-list li::before {
@@ -985,6 +635,11 @@
         height: 3px;
         background: linear-gradient(90deg, var(--primary), var(--accent));
         border-radius: 2px;
+        transition: var(--transition);
+      }
+
+      .contact-info h3:hover::after {
+        width: 100%;
       }
 
       .contact-item {
@@ -1022,6 +677,7 @@
         font-size: 1.2rem;
         margin-bottom: 5px;
         color: var(--secondary);
+        font-family: 'Poppins', sans-serif;
       }
 
       .contact-details p,
@@ -1052,7 +708,6 @@
 
       .form-group {
         margin-bottom: 25px;
-        position: relative;
       }
 
       .form-group label {
@@ -1108,62 +763,6 @@
         background: linear-gradient(135deg, var(--primary-light), var(--primary));
       }
 
-      .btn-whatsapp {
-        background: linear-gradient(135deg, #25D366, #128C7E);
-        margin-left: 15px;
-      }
-
-      .btn-whatsapp:hover {
-        background: linear-gradient(135deg, #128C7E, #25D366);
-      }
-
-      .form-buttons {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      /* ========== CV SECTION ========== */
-      #cv {
-        background-color: white;
-      }
-
-      .cv-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .cv-embed {
-        width: 100%;
-        max-width: 800px;
-        height: 800px;
-        border: 1px solid var(--light-gray);
-        border-radius: var(--border-radius);
-        box-shadow: var(--shadow-md);
-        margin-bottom: 30px;
-      }
-
-      .cv-download-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        padding: 12px 25px;
-        background: linear-gradient(135deg, var(--primary), var(--primary-light));
-        color: white;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: 600;
-        transition: var(--transition);
-        box-shadow: 0 10px 20px rgba(67, 97, 238, 0.3);
-      }
-
-      .cv-download-btn:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 30px rgba(67, 97, 238, 0.4);
-        background: linear-gradient(135deg, var(--primary-light), var(--primary));
-      }
-
       /* ========== FOOTER ========== */
       footer {
         background: linear-gradient(135deg, var(--secondary), var(--dark));
@@ -1184,8 +783,6 @@
         gap: 30px;
         margin-bottom: 30px;
         flex-wrap: wrap;
-        position: relative;
-        z-index: 2;
       }
 
       .footer-links a {
@@ -1219,8 +816,6 @@
         margin-bottom: 30px;
         opacity: 0.8;
         font-size: 1rem;
-        position: relative;
-        z-index: 2;
       }
 
       .back-to-top {
@@ -1260,8 +855,6 @@
         justify-content: center;
         gap: 15px;
         margin-top: 30px;
-        position: relative;
-        z-index: 2;
       }
 
       .social-links a {
@@ -1312,71 +905,6 @@
         }
       }
 
-      .print-btn {
-        position: fixed;
-        bottom: 30px;
-        right: 90px;
-        z-index: 999;
-        padding: 12px 20px;
-        background: linear-gradient(135deg, var(--primary), var(--primary-light));
-        color: white;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: 600;
-        transition: var(--transition);
-        box-shadow: 0 10px 20px rgba(67, 97, 238, 0.3);
-        border: none;
-        cursor: pointer;
-        font-size: 0.9rem;
-      }
-
-      .print-btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-      }
-
-      /* ========== NOTIFICATION ========== */
-      .notification {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        padding: 15px 25px;
-        border-radius: 8px;
-        background: white;
-        color: var(--dark);
-        box-shadow: var(--shadow-lg);
-        z-index: 10000;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        transform: translateX(150%);
-        transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      }
-
-      .notification.show {
-        transform: translateX(0);
-      }
-
-      .notification.success {
-        border-left: 4px solid #4CAF50;
-      }
-
-      .notification.error {
-        border-left: 4px solid #f44336;
-      }
-
-      .notification i {
-        font-size: 1.2rem;
-      }
-
-      .notification.success i {
-        color: #4CAF50;
-      }
-
-      .notification.error i {
-        color: #f44336;
-      }
-
       /* ========== RESPONSIVE ========== */
       @media (max-width: 1200px) {
         .container {
@@ -1409,19 +937,6 @@
 
         section {
           padding: 70px 0;
-        }
-
-        .cv-embed {
-          height: 600px;
-        }
-
-        .form-buttons {
-          flex-direction: column;
-          gap: 15px;
-        }
-
-        .btn-whatsapp {
-          margin-left: 0;
         }
       }
 
@@ -1480,17 +995,6 @@
         .skills-category {
           padding: 25px;
         }
-
-        .cv-embed {
-          height: 500px;
-        }
-
-        .print-btn {
-          bottom: 15px;
-          right: 15px;
-          font-size: 0.8rem;
-          padding: 10px 15px;
-        }
       }
 
       @media (max-width: 576px) {
@@ -1538,33 +1042,6 @@
           flex-direction: column;
           gap: 15px;
         }
-
-        .print-btn {
-          bottom: 15px;
-          right: 15px;
-          padding: 10px 20px;
-          font-size: 0.9rem;
-        }
-
-        .cv-embed {
-          height: 400px;
-        }
-
-        .contact-item {
-          flex-direction: column;
-          text-align: center;
-          gap: 15px;
-        }
-
-        .contact-icon {
-          margin-right: 0;
-        }
-
-        .notification {
-          left: 20px;
-          right: 20px;
-          width: calc(100% - 40px);
-        }
       }
     </style>
   </head>
@@ -1582,7 +1059,6 @@
             <li><a href="#skills">Keahlian</a></li>
             <li><a href="#experience">Pengalaman</a></li>
             <li><a href="#education">Pendidikan</a></li>
-            <li><a href="#cv">CV</a></li>
             <li><a href="#contact">Kontak</a></li>
           </ul>
         </div>
@@ -1722,7 +1198,7 @@
               <li>Mengoperasikan sistem administrasi produksi</li>
               <li>Bekerja dalam tim lintas fungsi untuk mencapai target produksi</li>
               <li>Membuat laporan harian menggunakan Microsoft Excel</li>
-              <li>Memastikan documentation produksi tersusun rapi dan mudah diakses</li>
+              <li>Memensure dokumentasi produksi tersusun rapi dan mudah diakses</li>
             </ul>
           </div>
         </div>
@@ -1769,22 +1245,6 @@
       </div>
     </section>
 
-    <!-- CV SECTION -->
-    <section id="cv" class="fade-in">
-      <div class="container">
-        <div class="section-title">
-          <h2>Curriculum Vitae</h2>
-        </div>
-        
-        <div class="cv-container">
-          <iframe src="Ahmad Roihan Azis-Curriculum Vitae.pdf" class="cv-embed" frameborder="0"></iframe>
-          <a href="Ahmad Roihan Azis-Curriculum Vitae.pdf" download class="cv-download-btn">
-            <i class="fas fa-download"></i> Unduh CV (PDF)
-          </a>
-        </div>
-      </div>
-    </section>
-
     <!-- KONTAK -->
     <section id="contact" class="fade-in">
       <div class="container">
@@ -1811,8 +1271,8 @@
                 <i class="fas fa-phone"></i>
               </div>
               <div class="contact-details">
-                <h4>Telepon/WhatsApp</h4>
-                <a href="https://wa.me/6281252167797" target="_blank">081252167797</a>
+                <h4>Telepon</h4>
+                <a href="https://wa.me/6281252167797" target="_blank">Hubungi via WhatsApp</a>
               </div>
             </div>
 
@@ -1859,10 +1319,7 @@
                 <textarea id="message" name="message" class="form-control" rows="6" required></textarea>
               </div>
 
-              <div class="form-buttons">
-                <button type="submit" class="btn">Kirim Pesan <i class="fas fa-paper-plane"></i></button>
-                <a href="https://wa.me/6281252167797?text=Halo Ahmad, saya tertarik dengan profil Anda." target="_blank" class="btn btn-whatsapp">Chat WhatsApp <i class="fab fa-whatsapp"></i></a>
-              </div>
+              <button type="submit" class="btn">Kirim Pesan <i class="fas fa-paper-plane"></i></button>
             </form>
           </div>
         </div>
@@ -1878,7 +1335,6 @@
             <a href="#skills">Keahlian</a>
             <a href="#experience">Pengalaman</a>
             <a href="#education">Pendidikan</a>
-            <a href="#cv">CV</a>
             <a href="#contact">Kontak</a>
           </div>
 
@@ -1897,34 +1353,8 @@
     <!-- Tombol Back to Top -->
     <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
 
-    <!-- Notification -->
-    <div id="notification" class="notification">
-      <i class="fas fa-check-circle"></i>
-      <span id="notification-text"></span>
-    </div>
-
     <!-- JAVASCRIPT -->
     <script>
-      // Inisialisasi EmailJS
-      (function() {
-        emailjs.init("YOUR_PUBLIC_KEY"); // Ganti dengan Public Key EmailJS Anda
-      })();
-
-      // Fungsi untuk menampilkan notifikasi
-      function showNotification(message, isSuccess = true) {
-        const notification = document.getElementById('notification');
-        const notificationText = document.getElementById('notification-text');
-        
-        notificationText.textContent = message;
-        notification.className = isSuccess ? 'notification success' : 'notification error';
-        notification.classList.add('show');
-        
-        // Sembunyikan notifikasi setelah 5 detik
-        setTimeout(() => {
-          notification.classList.remove('show');
-        }, 5000);
-      }
-
       // Animasi Scroll
       document.addEventListener('DOMContentLoaded', function () {
         const fadeElements = document.querySelectorAll('.fade-in');
@@ -2009,31 +1439,37 @@
           });
         });
 
-        // Form Submission dengan EmailJS
+        // Form Submission
         const contactForm = document.getElementById('contactForm');
         if (contactForm) {
           contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
             
-            // Tampilkan indikator loading
+            // Tampilkan loading state
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
             submitBtn.disabled = true;
             
-            // Kirim email menggunakan EmailJS
-            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
-              .then(() => {
-                showNotification('Terima kasih! Pesan Anda telah terkirim. Saya akan segera menghubungi Anda kembali.');
-                contactForm.reset();
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-              }, (error) => {
-                console.error('Error:', error);
-                showNotification('Terjadi kesalahan saat mengirim pesan. Silakan coba lagi atau hubungi saya langsung melalui WhatsApp.', false);
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-              });
+            // Ambil data dari form
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Buat link email
+            const mailtoLink = `mailto:hanroy209@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Nama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`)}`;
+            
+            // Buka aplikasi email default
+            window.location.href = mailtoLink;
+            
+            // Reset form dan kembalikan tombol ke keadaan semula
+            setTimeout(() => {
+              contactForm.reset();
+              submitBtn.innerHTML = originalText;
+              submitBtn.disabled = false;
+              alert('Terima kasih! Aplikasi email akan terbuka. Silakan kirim pesan Anda.');
+            }, 1000);
           });
         }
       });
